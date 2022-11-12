@@ -9,9 +9,12 @@ int FunctionAkkerman(int m, int n)
     return FunctionAkkerman(m - 1, FunctionAkkerman(m, n - 1));
 }
 
-Console.WriteLine("Введите первое число");
+Console.WriteLine("Введите первое неотрицательное число");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите второе число");
+Console.WriteLine("Введите второе неотрицательное число");
 int n = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine(FunctionAkkerman(m, n));
+if (m < 0 || n < 0)
+    Console.WriteLine("Вы ввели некорректное число");
+else
+    Console.WriteLine(FunctionAkkerman(m, n));
